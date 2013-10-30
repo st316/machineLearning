@@ -15,6 +15,7 @@ public class TrainingSet {
     private int pointDim;
 
     public TrainingSet() {
+        this.ts = new LinkedHashMap<Point, Boolean>();
     }
 
     public TrainingSet(LinkedHashMap<Point, Boolean> ts, int pointDim) {
@@ -28,7 +29,7 @@ public class TrainingSet {
         int c = sc.nextInt();
         Point p = new Point();
         for (int i = 0; i < c; i++) {
-            p.setFromStdIn();
+            p.setFromStdIn(sc);
             this.ts.put(p, sc.nextBoolean());
         }
         sc.close();

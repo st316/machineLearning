@@ -23,13 +23,11 @@ public class Point {
 
     }
 
-    public void setFromStdIn() {
-        Scanner sc = new Scanner(System.in);
+    public void setFromStdIn(Scanner sc) {
         int d = sc.nextInt();
         int[] v = new int[d];
         for (int i = 0; i < d; i++)
             v[i] = sc.nextInt();
-        sc.close();
         this.setValue(v);
     }
 
@@ -42,7 +40,7 @@ public class Point {
     }
 
     public void setValue(int[] value) {
-        this.value = value;
+        this.value = Arrays.copyOf(value, value.length);
         this.dimension = value.length;
     }
 
