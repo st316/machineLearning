@@ -24,15 +24,14 @@ public class TrainingSet {
         this.pointDim = pointDim;
     }
 
-    public void setFromStdIN() {
-        Scanner sc = new Scanner(System.in);
+    public void setFromStdIN(Scanner sc) {
         int c = sc.nextInt();
-        Point p = new Point();
+        Point p = null;
         for (int i = 0; i < c; i++) {
+            p = new Point();
             p.setFromStdIn(sc);
             this.ts.put(p, sc.nextBoolean());
         }
-        sc.close();
         this.count = this.ts.size();
         this.pointDim = p.getDimension();
     }
